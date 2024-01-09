@@ -18,6 +18,8 @@ Project 소개 :CRUD에 숙련도를 높이기위해 간단하게 만들어보�
 
 [Trello 보드 바로 가기]  https://trello.com/b/QkaygjbP
 
+[노션 페이지 바로 가기] https://gorgeous-billboard-ea4.notion.site/To-doList-Project-8edad70519e4448997a9060b9789cc94?pvs=4
+
 
 # **개발 환경**
 
