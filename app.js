@@ -4,13 +4,15 @@ const cors = require("cors");
 const morgan = require("morgan");
 const { AppDataSource } = require("./src/models/deata-source");
 const { routes } = require("./src/routes");
+const { globalErrorHandler } = require('./src/utils/error');
 
 const app = express();
-app.use =(cors());
-app.use =(morgan("combined"));
-app.use =(express.json());
+app.use(cors()); 
+app.use(morgan("combined")); 
+app.use(express.json()); 
+app.use(globalErrorHandler);
 
-app.use =(routes);
+
 
 
 app.get("/ping", (req, res, next) => {
