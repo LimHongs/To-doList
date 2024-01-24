@@ -65,7 +65,7 @@ describe("Todo DAO Unit Tests", () => {
 
       
       const result = await detailTodo(todoId);
-
+    
       
       expect(result).toBeDefined();
       
@@ -103,4 +103,39 @@ describe("Todo DAO Unit Tests", () => {
 
     });
   });
+
+
+
+  //통합 테스트 
+  describe("통합 테스트", () => {
+    test("순서는 생성->목록->상세보기->업데이트->삭제", async() => {
+      // 생성
+      const createdTodo = await createTodo(1, "Integration Test Todo", "Integration Test Content");
+      expect(createdTodo).toBeDefined();
+     
+  
+      // 목록
+      const todoList = await getTodo(1);
+      expect(todoList).toBeDefined();
+  
+      // 상세보기
+      const todoId = createdTodo.id;
+      const detail = await detailTodo(todoId);
+      expect(detail).toBeDefined();
+  
+      // 업데이트
+      const updatedTitle = "Updated Title";
+      const updatedContent = "Updated Content";
+      const updatedTodo = await updateTodo(updatedTitle, updatedContent, todoId);
+      expect(updatedTodo).toBeDefined();
+  
+      // 삭제
+      const deletedTodo = await deleteTodo(todoId);
+      expect(deletedTodo).toBeDefined();
+    });
+  });
+
+
+
+  
 });
