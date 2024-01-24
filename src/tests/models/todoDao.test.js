@@ -110,7 +110,7 @@ describe("Todo DAO Unit Tests", () => {
   describe("통합 테스트", () => {
     test("순서는 생성->목록->상세보기->업데이트->삭제", async() => {
       // 생성
-      const createdTodo = await createTodo(1, "Integration Test Todo", "Integration Test Content");
+      const createdTodo = await createTodo(1, "create test title", "create Test Content");
       expect(createdTodo).toBeDefined();
      
   
@@ -124,8 +124,8 @@ describe("Todo DAO Unit Tests", () => {
       expect(detail).toBeDefined();
   
       // 업데이트
-      const updatedTitle = "Updated Title";
-      const updatedContent = "Updated Content";
+      const updatedTitle = "update Title";
+      const updatedContent = "Update Content";
       const updatedTodo = await updateTodo(updatedTitle, updatedContent, todoId);
       expect(updatedTodo).toBeDefined();
   
@@ -135,7 +135,4 @@ describe("Todo DAO Unit Tests", () => {
     });
   });
 
-
-
-  
 });
